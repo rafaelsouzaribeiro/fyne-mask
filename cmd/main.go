@@ -2,7 +2,6 @@ package main
 
 import (
 	"strings"
-	"unicode"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
@@ -14,64 +13,6 @@ type CharPosition struct {
 	Position int
 }
 
-func GetSpecialCharactersWithPositions(input string) []CharPosition {
-	var result []CharPosition
-
-	for i, char := range input {
-		if !unicode.IsLetter(char) && !unicode.IsDigit(char) {
-			result = append(result, CharPosition{Char: string(char), Position: i})
-		}
-	}
-
-	return result
-}
-
-func GetSpecialCharacters(position int, chars []CharPosition) string {
-	var result string
-
-	for _, char := range chars {
-		if char.Position == position {
-			result += char.Char
-		}
-	}
-
-	return result
-}
-func GetPositionNotCharactersEspecial(input string) int {
-	var position int
-	for i, char := range input {
-		if unicode.IsLetter(char) && unicode.IsDigit(char) {
-			position = i
-			break
-		}
-	}
-
-	return position
-}
-
-func GetLastSpecialCharacter(input string, chars []CharPosition) int {
-	var lastPosition int
-
-	for _, char := range chars {
-		if input == char.Char {
-			lastPosition = char.Position
-		}
-	}
-
-	return lastPosition
-}
-
-func GetPositionCharactersEspecial(input string, chars []CharPosition) int {
-	var position int
-	for _, char := range chars {
-		if input == char.Char {
-			position = char.Position
-			break
-		}
-	}
-
-	return position
-}
 func main() {
 	// Inicializa o aplicativo Fyne
 	myApp := app.New()
@@ -80,7 +21,7 @@ func main() {
 	// Campo de entrada com máscara
 	input := widget.NewEntry()
 	input.SetPlaceHolder("Digite o CPF")
-	SetMask(input, "###.###s", true)
+	SetMask(input, "###.###", true)
 
 	// Configura o layout da janela
 	myWindow.SetContent(input)
