@@ -12,7 +12,7 @@ func main() {
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Enter the mask")
 
-	content := di.NewDi(mask.NewMask(components.NewEnrty("Enter the mask"), "###.###.###-##", true), "Enter the mask")
+	content := di.NewDi(mask.NewMask(components.NewEnrty("Enter the mask"), "####-##-##", false), "Enter the mask")
 	myWindow.SetContent(content)
 	myWindow.Resize(fyne.NewSize(300, 100))
 	myWindow.ShowAndRun()
