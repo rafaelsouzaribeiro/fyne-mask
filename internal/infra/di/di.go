@@ -4,17 +4,15 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
-	"github.com/rafaelsouzaribeiro/login/fyne-mask/internal/components"
-	"github.com/rafaelsouzaribeiro/login/fyne-mask/pkg/mask"
+	"github.com/rafaelsouzaribeiro/login/fyne-mask/pkg/mask/types"
 )
 
-func NewDi() *fyne.Container {
+func NewDi(mask types.IMask, label string) *fyne.Container {
 
-	cpf := mask.NewMask(components.NewEnrty("Digite o CPF"), "###.###.###-##", false)
-	cpfEntry := cpf.Mask()
+	masks := mask.Mask()
 	content := container.NewVBox(
-		widget.NewLabel("Digite o CPF:"),
-		cpfEntry,
+		widget.NewLabel(label),
+		masks,
 	)
 
 	return content
