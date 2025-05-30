@@ -4,7 +4,7 @@ import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
-	"github.com/rafaelsouzaribeiro/login/fyne-mask/pkg/mask/types"
+	"github.com/rafaelsouzaribeiro/fyne-mask/pkg/mask/types"
 )
 
 func NewDi(mask types.IMask, label string) *fyne.Container {

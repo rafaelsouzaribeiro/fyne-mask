@@ -2,7 +2,7 @@ package mask
 
 import (
 	"fyne.io/fyne/v2/widget"
-	"github.com/rafaelsouzaribeiro/login/fyne-mask/pkg/mask/types"
+	"github.com/rafaelsouzaribeiro/fyne-mask/pkg/mask/types"
 )
 
 type Mask struct {
