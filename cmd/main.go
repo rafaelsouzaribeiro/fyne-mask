@@ -3,8 +3,8 @@ package main
 import (
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
-	"github.com/rafaelsouzaribeiro/fyne-mask/internal/components"
-	"github.com/rafaelsouzaribeiro/fyne-mask/internal/infra/di"
+	"github.com/rafaelsouzaribeiro/fyne-mask/pkg/components"
+	"github.com/rafaelsouzaribeiro/fyne-mask/pkg/di"
 	"github.com/rafaelsouzaribeiro/fyne-mask/pkg/mask"
 )
 
